@@ -336,7 +336,7 @@ class _SignUpState extends State<SignUp> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => HomePage(),
+                                    builder: (context) => const HomePage(),
                                   ));
                             });
                           }
@@ -363,7 +363,7 @@ class _SignUpState extends State<SignUp> {
                                 Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => HomePage(),
+                                    builder: (context) => const HomePage(),
                                   ),
                                 );
                               },
@@ -387,10 +387,10 @@ class _SignUpState extends State<SignUp> {
                             isLoading = false;
                           });
                         },
-                        child: Text('Sign up with google',
+                        child: const Text('Sign up with google',
                             style: TextStyle( color:  Color(0xff5A0957),)),
                       )
-                    : SizedBox(
+                    : const SizedBox(
                         height: 20,
                         width: 20,
                         child: CircularProgressIndicator(

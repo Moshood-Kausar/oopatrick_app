@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart' as location;
@@ -19,9 +21,9 @@ class _HomePageState extends State<HomePage> {
   String long = "", lat = "";
   late StreamSubscription<Position> positionStream;
 
-   LatLng _initialcameraposition = const LatLng(0.0, 0.0);
+   final LatLng _initialcameraposition = const LatLng(0.0, 0.0);
   late GoogleMapController _controller;
-  location.Location _location = location.Location();
+  final location.Location _location = location.Location();
   @override
   void initState() {
     checkGps();
@@ -76,24 +78,7 @@ class _HomePageState extends State<HomePage> {
       //refresh UI
     });
 
-    LocationSettings locationSettings = LocationSettings(
-      accuracy: LocationAccuracy.high,
-      distanceFilter: 100,
-    );
 
-    StreamSubscription<Position> positionStream =
-        Geolocator.getPositionStream(locationSettings: locationSettings)
-            .listen((Position position) {
-      print(position.longitude); //Output: 80.24599079
-      print(position.latitude); //Output: 29.6593457
-
-      long = position.longitude.toString();
-      lat = position.latitude.toString();
-
-      setState(() {
-        //refresh UI on update
-      });
-    });
   }
 
   void _onMapCreated(GoogleMapController _cntlr) {
