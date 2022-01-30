@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   String long = "", lat = "";
   late StreamSubscription<Position> positionStream;
 
-  final LatLng _initialcameraposition =  const LatLng(67.00,56.00);
+  final LatLng _initialcameraposition = const LatLng(0.0, 0.0);
   late GoogleMapController _controller;
   final location.Location _location = location.Location();
   @override
@@ -50,7 +50,6 @@ class _HomePageState extends State<HomePage> {
 
       if (haspermission) {
         setState(() {});
-
         getLocation();
       }
     } else {
@@ -64,8 +63,13 @@ class _HomePageState extends State<HomePage> {
     position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
     position = await Geolocator.getCurrentPosition();
-    print(position.longitude);
-    print(position.latitude);
+
+    
+  
+
+    print(position.longitude); 
+    print(position.latitude); 
+
 
     long = position.longitude.toString();
     lat = position.latitude.toString();
@@ -75,14 +79,17 @@ class _HomePageState extends State<HomePage> {
 
   void _onMapCreated(GoogleMapController _cntlr) {
     _controller = _cntlr;
-    _location.onLocationChanged.listen((l) {
-      _controller.animateCamera(
-        CameraUpdate.newCameraPosition(
-          CameraPosition(
-              target: LatLng(position.longitude, position.latitude), zoom: 15),
-        ),
-      );
-    });
+    _location.onLocationChanged.listen(
+      (l) {
+        _controller.animateCamera(
+          CameraUpdate.newCameraPosition(
+            CameraPosition(
+                target: LatLng(position.longitude, position.latitude),
+                zoom: 15),
+          ),
+        );
+      },
+    );
   }
 
   @override

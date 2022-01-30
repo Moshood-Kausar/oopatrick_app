@@ -1,7 +1,6 @@
-// ignore_for_file: avoid_print
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseService {
@@ -30,13 +29,13 @@ class FirebaseService {
         "fname": user.displayName,
         "pic": user.photoURL,
       }).then((value) {
-        print('Information saved to database');
+        debugPrint('Information saved to database');
       });
 
-      print('signInWithGoogle succeeded: $user');
+      debugPrint('signInWithGoogle succeeded: $user');
       return 'signInWithGoogle succeeded: $user';
     } on FirebaseAuthException catch (e) {
-      print(e.message);
+      debugPrint(e.message);
       // throw e;
     }
   }
@@ -44,6 +43,6 @@ class FirebaseService {
   Future<void> signOutFromGoogle() async {
     await _googleSignIn.signOut();
     await _auth.signOut();
-    print('User signed out!');
+    debugPrint('User signed out!');
   }
 }
