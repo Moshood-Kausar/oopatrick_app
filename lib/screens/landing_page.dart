@@ -1,9 +1,7 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:oopatrick_app/screens/signUp.dart';
+import 'package:oopatrick_app/screens/sign_up.dart';
 import 'package:oopatrick_app/style/button.dart';
 import 'login.dart';
 

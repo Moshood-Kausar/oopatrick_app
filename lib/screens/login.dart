@@ -5,10 +5,9 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:oopatrick_app/data/my_function.dart';
-import 'package:oopatrick_app/screens/landingPage.dart';
-import 'package:oopatrick_app/screens/signUp.dart';
+import 'package:oopatrick_app/screens/landing_page.dart';
+import 'package:oopatrick_app/screens/sign_up.dart';
 import 'package:oopatrick_app/style/button.dart';
 import 'package:oopatrick_app/style/textform.dart';
 import 'homepage.dart';

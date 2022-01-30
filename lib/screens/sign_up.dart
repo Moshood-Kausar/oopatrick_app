@@ -1,5 +1,3 @@
-// ignore_for_file: file_names, avoid_print
-
 import 'dart:async';
 import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -326,7 +324,7 @@ class _SignUpState extends State<SignUp> {
                               if (e.code == 'email-already-in-use') {
                                 snackBar(
                                     'The email address is already in use by another account.');
-                                print(e.message);
+                                debugPrint(e.message);
                               } else {
                                 snackBar('${e.message}');
                               }
@@ -368,7 +366,7 @@ class _SignUpState extends State<SignUp> {
                                 );
                               },
                             ).timeout(timeOut);
-                            print(
+                            debugPrint(
                                 'Sign in with Google completed - navigate to home screen');
                           } on SocketException catch (_) {
                             snackBar(nointernet);
@@ -378,7 +376,7 @@ class _SignUpState extends State<SignUp> {
                             if (e.code == 'email-already-in-use') {
                               snackBar(
                                   'The email address is already in use by another account.');
-                              print(e.message);
+                              debugPrint(e.message);
                             } else {
                               snackBar('${e.message}');
                             }

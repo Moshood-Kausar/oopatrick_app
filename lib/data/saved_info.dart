@@ -1,5 +1,3 @@
-
-
 import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
 
 class MyAppSettings {

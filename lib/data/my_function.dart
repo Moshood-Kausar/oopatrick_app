@@ -1,5 +1,4 @@
-// ignore_for_file: avoid_print
-
+import 'package:flutter/material.dart';
 import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
 
 class MyFunctions {
@@ -25,7 +24,6 @@ class MyFunctions {
     prefs.setString('email', email);
 
     prefs.setString('role', role);
-    print(
-        'Infor Saved **************** $role, $lname, $fname, $uid ************');
+    debugPrint('Infor Saved *** $lname, $fname, $uid ******');
   }
 }
