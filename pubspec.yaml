@@ -48,6 +48,8 @@ dev_dependencies:
   cloud_firestore: ^2.5.1
   streaming_shared_preferences: ^2.0.0
   firebase_messaging: ^10.0.6
+  pinput: ^1.2.0 
+  fluttertoast: ^8.0.8
   google_maps_flutter:
   location: 
   geocoding: ^2.0.0

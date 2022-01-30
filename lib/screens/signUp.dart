@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, avoid_print
+// ignore_for_file: file_names
 
 import 'dart:async';
 import 'dart:io';
@@ -37,8 +37,6 @@ class _SignUpState extends State<SignUp> {
       _location,
       _passwordd;
 
-  //FocusNode? pass;
-  //String? email;
   bool _hideShow = true;
   bool _hideshoww = true;
   bool isLoading = false, btnLoad = false;
@@ -51,7 +49,6 @@ class _SignUpState extends State<SignUp> {
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
-            // physics: BouncingScrollPhysics(),
             child: Column(
               children: [
                 Row(
@@ -60,7 +57,10 @@ class _SignUpState extends State<SignUp> {
                     IconButton(
                       onPressed: () {
                         Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (_) => const Login()));
+                          MaterialPageRoute(
+                            builder: (_) => const Login(),
+                          ),
+                        );
                       },
                       icon: const Icon(
                         Icons.arrow_back,
@@ -326,18 +326,13 @@ class _SignUpState extends State<SignUp> {
                               if (e.code == 'email-already-in-use') {
                                 snackBar(
                                     'The email address is already in use by another account.');
-                                print(e.message);
+                                debugPrint(e.message);
                               } else {
                                 snackBar('${e.message}');
                               }
                             }
                             setState(() {
                               btnLoad = false;
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const HomePage(),
-                                  ));
                             });
                           }
                         },
@@ -368,7 +363,7 @@ class _SignUpState extends State<SignUp> {
                                 );
                               },
                             ).timeout(timeOut);
-                            print(
+                            debugPrint(
                                 'Sign in with Google completed - navigate to home screen');
                           } on SocketException catch (_) {
                             snackBar(nointernet);
@@ -378,7 +373,7 @@ class _SignUpState extends State<SignUp> {
                             if (e.code == 'email-already-in-use') {
                               snackBar(
                                   'The email address is already in use by another account.');
-                              print(e.message);
+                              debugPrint(e.message);
                             } else {
                               snackBar('${e.message}');
                             }
@@ -387,8 +382,10 @@ class _SignUpState extends State<SignUp> {
                             isLoading = false;
                           });
                         },
-                        child: const Text('Sign up with google',
-                            style: TextStyle( color:  Color(0xff5A0957),)),
+                        child: const Text('Sign in with google',
+                            style: TextStyle(
+                              color: Color(0xff5A0957),
+                            )),
                       )
                     : const SizedBox(
                         height: 20,
@@ -397,13 +394,19 @@ class _SignUpState extends State<SignUp> {
                           strokeWidth: 2.2,
                         ),
                       ),
-                const SizedBox(height: 40),
-                Text(
-                  'Already have an account?',
-                  style: GoogleFonts.montserrat(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 12,
-                    color: const Color(0xff5A0957),
+                const SizedBox(height: 10),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const Login()));
+                  },
+                  child: Text(
+                    'Already have an account?',
+                    style: GoogleFonts.montserrat(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12,
+                      color: const Color(0xff5A0957),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -442,7 +445,7 @@ class _SignUpState extends State<SignUp> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => const HomePage(),
+                builder: (context) =>  const HomePage(),
               ),
             );
           } else {

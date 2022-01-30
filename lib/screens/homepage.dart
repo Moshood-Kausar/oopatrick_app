@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   String long = "", lat = "";
   late StreamSubscription<Position> positionStream;
 
-   final LatLng _initialcameraposition = const LatLng(0.0, 0.0);
+  final LatLng _initialcameraposition =  const LatLng(67.00,56.00);
   late GoogleMapController _controller;
   final location.Location _location = location.Location();
   @override
@@ -49,9 +49,7 @@ class _HomePageState extends State<HomePage> {
       }
 
       if (haspermission) {
-        setState(() {
-          //refresh the UI
-        });
+        setState(() {});
 
         getLocation();
       }
@@ -59,26 +57,20 @@ class _HomePageState extends State<HomePage> {
       debugPrint("GPS Service is not enabled, turn on GPS location");
     }
 
-    setState(() {
-      //refresh the UI
-    });
+    setState(() {});
   }
 
   getLocation() async {
     position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
     position = await Geolocator.getCurrentPosition();
-    print(position.longitude); 
-    print(position.latitude); 
+    print(position.longitude);
+    print(position.latitude);
 
     long = position.longitude.toString();
     lat = position.latitude.toString();
 
-    setState(() {
-      //refresh UI
-    });
-
-
+    setState(() {});
   }
 
   void _onMapCreated(GoogleMapController _cntlr) {
@@ -96,17 +88,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Stack(
           children: [
             GoogleMap(
-              onMapCreated:_onMapCreated,
+              onMapCreated: _onMapCreated,
               initialCameraPosition:
                   CameraPosition(target: _initialcameraposition),
               myLocationEnabled: true,
               compassEnabled: true,
+               mapType: MapType.normal,
             ),
           ],
         ),

@@ -26,6 +26,6 @@ class MyFunctions {
 
     prefs.setString('role', role);
     print(
-        'Infor Saved **************** $role, $lname, $fname, $uid ************');
+        'Info Saved **************** $role, $lname, $fname, $uid ************');
   }
 }

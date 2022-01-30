@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +17,7 @@ Future<void> main() async {
 }
 
 Future<void> _onBackgroundMessage(RemoteMessage msg) async {
-  print("$msg - ${msg.messageId}");
+  debugPrint("$msg - ${msg.messageId}");
 }
 
 
