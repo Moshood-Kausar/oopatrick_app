@@ -61,8 +61,13 @@ class _HomePageState extends State<HomePage> {
     position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
     position = await Geolocator.getCurrentPosition();
+<<<<<<< HEAD
     debugPrint("${position.longitude}");
     debugPrint("${position.latitude}");
+=======
+    print(position.longitude); 
+    print(position.latitude); 
+>>>>>>> 89fa8e04bc5eb0fe3120c82459e87d6cb4565698
 
     long = position.longitude.toString();
     lat = position.latitude.toString();

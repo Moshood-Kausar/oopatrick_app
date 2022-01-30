@@ -12,7 +12,6 @@ import 'package:oopatrick_app/style/button.dart';
 import 'package:oopatrick_app/style/textform.dart';
 import 'homepage.dart';
 
-
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -21,7 +20,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
- 
   final _formKey = GlobalKey<FormState>();
   TextEditingController? _email, _password;
   bool _isLoading = false;
@@ -83,12 +81,12 @@ class _LoginState extends State<Login> {
                     const SizedBox(height: 38),
                     SvgPicture.asset(
                       'assets/login.svg',
-                      height:200,
+                      height: 200,
                     ),
                     const SizedBox(height: 40),
                     AppTextFormField(
                       controller: _email,
-                      text: 'Email or Phone',
+                      text: 'Email ',
                       prefixIcon: Icons.email,
                       textInputAction: TextInputAction.next,
                       validator: (value) {
@@ -175,21 +173,10 @@ class _LoginState extends State<Login> {
                                 }
                                 setState(() {
                                   _isLoading = false;
-                                  
                                 });
                               }
                             },
                           ),
-                         const Center(
-                        child: SizedBox(
-                          height: 30,
-                          width: 30,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2.2,
-                          ),
-                        ),
-                      ),
-                          
                     const SizedBox(height: 30),
                     GestureDetector(
                       onTap: () {
