@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "953064423192",
+    "project_id": "oopatrick-34ca3",
+    "storage_bucket": "oopatrick-34ca3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953064423192:android:df578146807f460876e86d",
+        "android_client_info": {
+          "package_name": "com.example.oopatrick_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953064423192-aru7e10ppq70ejtqteo3qumtce25u7te.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.oopatrick_app",
+            "certificate_hash": "fc519e5163e2bb8cdcb584385322489b048dd15d"
+          }
+        },
+        {
+          "client_id": "953064423192-l5mrr034rm0gfohm6ikok87ma7q5l20d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN4SvyiGMNOJQn_1HWfdmYOgCsmRsf2Jc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953064423192-l5mrr034rm0gfohm6ikok87ma7q5l20d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
