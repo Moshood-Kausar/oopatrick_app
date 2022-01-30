@@ -24,11 +24,6 @@ class MyFunctions {
     prefs.setString('email', email);
 
     prefs.setString('role', role);
-<<<<<<< HEAD
-    print(
-        'Info Saved **************** $role, $lname, $fname, $uid ************');
-=======
     debugPrint('Infor Saved *** $lname, $fname, $uid ******');
->>>>>>> eab23671ed97816af74075cf6997b81e2b9a1744
   }
 }
