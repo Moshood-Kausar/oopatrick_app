@@ -42,7 +42,6 @@ dev_dependencies:
   google_fonts: ^2.1.0
   flutter_svg:
   google_sign_in: ^5.2.1
-  flutter_facebook_auth: ^3.4.1
   firebase_auth: ^3.3.4
   firebase_core: ^1.6.0
   firebase_database: ^7.2.0

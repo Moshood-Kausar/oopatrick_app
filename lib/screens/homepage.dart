@@ -38,9 +38,9 @@ class _HomePageState extends State<HomePage> {
       if (permission == LocationPermission.denied) {
         permission = await Geolocator.requestPermission();
         if (permission == LocationPermission.denied) {
-          print('Location permissions are denied');
+          debugPrint('Location permissions are denied');
         } else if (permission == LocationPermission.deniedForever) {
-          print("'Location permissions are permanently denied");
+          debugPrint("'Location permissions are permanently denied");
         } else {
           haspermission = true;
         }
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
         getLocation();
       }
     } else {
-      print("GPS Service is not enabled, turn on GPS location");
+      debugPrint("GPS Service is not enabled, turn on GPS location");
     }
 
     setState(() {
@@ -68,8 +68,8 @@ class _HomePageState extends State<HomePage> {
     position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
     position = await Geolocator.getCurrentPosition();
-    print(position.longitude); //Output: 80.24599079
-    print(position.latitude); //Output: 29.6593457
+    print(position.longitude); 
+    print(position.latitude); 
 
     long = position.longitude.toString();
     lat = position.latitude.toString();
