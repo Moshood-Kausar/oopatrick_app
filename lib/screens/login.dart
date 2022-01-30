@@ -87,7 +87,7 @@ class _LoginState extends State<Login> {
                     const SizedBox(height: 40),
                     AppTextFormField(
                       controller: _email,
-                      text: 'Email or Phone',
+                      text: 'Email ',
                       prefixIcon: Icons.email,
                       textInputAction: TextInputAction.next,
                       validator: (value) {
