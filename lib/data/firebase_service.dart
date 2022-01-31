@@ -36,7 +36,7 @@ class FirebaseService {
       return 'signInWithGoogle succeeded: $user';
     } on FirebaseAuthException catch (e) {
       debugPrint(e.message);
-      // throw e;
+      
     }
   }
 
